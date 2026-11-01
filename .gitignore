@@ -1,0 +1,14 @@
+# Build output
+build/
+dist/
+*.zip
+*.dmg
+
+# macOS
+.DS_Store
+._*
+
+# Editors
+.idea/
+.vscode/
+*.swp

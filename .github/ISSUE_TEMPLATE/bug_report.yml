@@ -1,0 +1,100 @@
+name: Bug report
+description: Report broken or surprising behavior in Switchtone.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One sentence describing what broke.
+      placeholder: "Keys stay silent after I update Switchtone, although Input Monitoring is on."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The shortest path that reproduces the issue.
+      placeholder: |
+        1. Open Switchtone's Settings > Permissions
+        2. Input Monitoring reads Allowed
+        3. Type in any app
+        4. No sound plays
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: The expected result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Switchtone version
+      description: Shown in the About window.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: macOS and Mac
+      description: macOS version and chip.
+      placeholder: "macOS 26.1 on M4"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: output
+    attributes:
+      label: Sound output
+      options:
+        - Built-in speakers
+        - Wired or Bluetooth headphones
+        - AirPods or Beats
+        - External speakers or display
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: How you installed it
+      options:
+        - install.sh (one-line install)
+        - Downloaded zip or dmg
+        - Built from source
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Relevant output from `log stream --predicate 'subsystem == "info.gabrimatic.switchtone"' --info`. The log holds counters only, never keys.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else that helps with triage.
+    validations:
+      required: false
